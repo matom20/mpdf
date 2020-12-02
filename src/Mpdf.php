@@ -7440,7 +7440,7 @@ class Mpdf implements \Psr\Log\LoggerAwareInterface
 						$this,
 						$objattr['INNER-X'],
 						$objattr['INNER-Y'],
-						$objattr['bsize'] * 25,
+						($this->ZoomMode === 'fullwidth' && $this->LayoutMode === 'single' ? $objattr['bheight'] : $objattr['bsize'] * 25),
 						$bgColor,
 						$color
 					);
